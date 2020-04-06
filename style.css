@@ -1,0 +1,594 @@
+*, *:after, *:before {  
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+body, html { 
+    font-size: 100%; 
+    padding: 0; 
+    margin: 0;
+}
+
+body {
+    font-family: MonoSpatial,"微軟正黑體",NSimSun,STFangsong,"WenQuanYi Zen Hei Sharp";
+}
+@font-face {
+font-family: monofonto;
+src: url('font/monofonto.ttf');
+}
+@font-face {
+font-family: MonoSpatial;
+src: url('font/MonoSpatial.ttf');
+}
+.container {
+    margin: 30px auto;
+    max-width: 800px;
+    width: 96%; 
+}
+
+#page {
+    z-index: 10;
+    position: relative;
+    opacity: 0;
+    margin-top: 20px;
+    background: #fff;
+    transition:all 1s ease 1s;
+    -webkit-transition:all 1s ease 1s;
+    -moz-transition:all 1s ease 1s;
+    -o-transition:all 1s ease 1s;
+}
+
+#page.displayed {
+    opacity: 1;
+}
+
+hr {
+    height: 1px;
+    background-color: #e9e9e9;
+    border: 0px;
+}
+
+
+p {
+    color: #404040;
+    font-size: 13px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #232323;
+    transition: 500ms ease;
+    -moz-transition: 500ms ease;
+    -webkit-transition: 500ms ease;
+    -ms-transition: 500ms ease;
+    -o-transition: 500ms ease;
+    padding-bottom: 4px;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+    
+}
+h1 a {
+    color: #404040;
+}
+
+.main h1 {
+    color: #404040;
+    font-size: 26px;
+}
+
+.main h2 {
+    color: #404040;
+    font-size: 24px;
+}
+.main h3 {
+    color: #404040;
+    font-size: 22px;
+}
+.main h4 {
+    color: #404040;
+    font-size: 20px;
+}
+.main h5 {
+    color: #404040;
+    font-size: 18px;
+}
+.main h6 {
+    color: #404040;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    height: 140px;
+    line-height: 30px;
+    padding: 0 80px;
+    z-index: 100;
+    top: 0;
+}
+
+#nav {
+    float: right;
+}
+
+#nav ul li {
+    float: left;
+    list-style: none;
+}
+
+#nav ul li a {
+    display: block;
+    margin-left: 40px;
+    margin-top: 50px;
+    color: #666;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase;
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+header .logo {
+    margin-top: 50px;
+    float: left;
+    position: absolute;
+    transition: 500ms ease;
+    -moz-transition: 500ms ease;
+    -webkit-transition: 500ms ease;
+    -ms-transition: 500ms ease;
+    -o-transition: 500ms ease;
+}
+
+header img:hover {
+    opacity: 0.7;
+}
+
+header .instagram-header-icon {
+    height: 15px;
+    margin-top: 8px;
+}
+
+#nav ul li .selected {
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.main {
+    width: 660px;
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-left: auto;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    background-color: #f3f3f3;
+    height: 80px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 0;
+    line-height: 80px;
+    margin-bottom: 0;
+}
+
+
+
+@media only screen and (min-width: 720px) {
+  .container {
+    border-radius:10px;
+    box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
+  }
+
+}
+
+@media screen and (max-width: 720px) {
+
+.container {
+    margin: auto;
+    width: 100%; 
+}
+
+header {
+    padding-left: 30px;
+}
+
+#nav {
+    width: 100%;
+    top: 132px;
+    position: absolute;
+    right: 0;
+}
+
+#nav:before {
+    font-style: normal;
+    content: '\2630';
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: -82px;
+    line-height: 27px;
+    font-size: 20px;
+    color: #323232;
+    cursor: pointer;
+}
+
+#nav ul {
+    background-color: #404040;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+
+#nav ul li {
+    float: none;
+}
+
+#nav ul li a {
+    line-height: 60px;
+    margin: 0;
+    color: #fff;
+    z-index: 10;
+    height: 60px;
+    transition: 500ms ease;
+    -moz-transition: 500ms ease;
+    -webkit-transition: 500ms ease;
+    -ms-transition: 500ms ease;
+    -o-transition: 500ms ease;
+}
+
+#nav ul li a:last-of-type {
+
+}
+
+#nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    opacity: 1;
+}
+
+#nav ul {
+    display: block;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 500ms ease-in-out;
+    -moz-transition: 500ms ease-in-out;
+    -webkit-transition: 500ms ease-in-out;
+    -ms-transition: 500ms ease-in-out;
+    -o-transition: 500ms ease-in-out;
+
+    transform: perspective(0) rotate3d(0, 0, 0, 0);
+    -moz-transform: perspective(0) rotate3d(1, 0, 0, -90deg);
+    -ms-transform: perspective(0) rotate3d(0, 0, 0, 0);
+    -o-transform: perspective(0) rotate3d(0, 0, 0, 0);
+    -webkit-transform: perspective(0) rotate3d(1, 0, 0, -90deg);
+
+    transform-origin: 100% 0%;
+    -moz-transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    -o-transform-origin: 100% 0%;
+}
+
+#nav.open ul {
+    height: auto;
+    opacity: 1;
+    transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+}
+
+#nav ul li .selected {
+    border-bottom: 0px;
+}
+.main {
+    padding: 0 30px; 
+    width: auto;
+}
+
+}
+
+
+/* img */
+img {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius:5px;
+    box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
+}
+/* code  */
+pre, code {
+background: #fbfbfb;
+font-family: monofonto;
+word-wrap:break-word; 
+}
+
+code { 
+    line-height: 20px;
+    color: #000000; 
+}
+pre {
+  padding: 8px;
+  overflow: auto;
+  max-height: 400px;
+  margin-bottom: 34px;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+}
+pre code {
+  padding: 3px;
+}
+
+/* */
+
+.center {
+    text-align:center;
+}
+
+
+ul {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+}
+
+
+q:before,blockquote:before{
+     content: open-quote;
+     font-size: 24pt;
+     text-align: center;
+     background: #fbfbfb;
+     float: left;
+     margin-left:-1em;
+     border-radius: 25px;
+     height: 25px;
+     width: 25px;
+}
+.archive li {
+    list-style-type: none;
+}
+
+th, td {
+    padding: 4px 20px 0 25px;
+    height: 45px;
+    border: 1px solid #e8e8e8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+}
+
+th {
+    background-color: whitesmoke;
+    height: 45px;
+    font-size: 13px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+}
+
+td:nth-of-type(even) {
+    padding: 0 25px 0 20px;
+    min-width: 90px;
+}
+
+
+#comments {
+  font-size: 14px;
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+article.comment {
+  margin: 10px 0;
+  padding: 5px 20px;
+  padding-left: 15px;
+}
+
+.comment-list, .comment-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-list li {
+  margin-top: 10px;
+}
+
+li ol li {
+  margin: 0;
+}
+
+.comment-list li .comment-reply {
+  float: right;
+  margin-top: -35px;
+  font-size: 95%;
+}
+
+.comment-list .respond {
+  margin-top: 0;
+}
+
+.comment-author {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.comment-author .avatar {
+  padding: 0;
+  margin: 0 10px 0 0;
+  float: left;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+}
+
+.comment-meta cite {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.comment-meta a {
+  text-decoration: none;
+}
+
+.comment-child {
+  padding-left: 5px;
+}
+
+.comment-reply a {
+  text-decoration: none;
+}
+
+.comment-by-user .comment-meta cite:after {
+  content: 'none';
+}
+
+.comment-form {
+  position: relative;
+  width: 100%;
+  margin: 30px 10px 0 0;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
+}
+
+.comment-form .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  font-size: 14px;
+  font-family: inherit;
+  border: none;
+  border-radius: 0;
+  line-height: inherit;
+  color: inherit;
+  text-shadow: inherit;
+}
+
+.comment-form .form-control:focus {
+  outline: 0;
+}
+
+.comment-form textarea.form-control {
+  margin: 3px 0 10px 0;
+  height: 150px;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  resize: none;
+  background-position: 87% 100%;
+  background-repeat: no-repeat;
+}
+
+.comment-form .input-control {
+  float: left;
+  width: calc(99%/3);
+  border-bottom: 1px solid #fafafa;
+}
+
+.comment-form #misubmit {
+  position: absolute;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  right: 30px;
+  bottom: 25px;
+  padding: 7.5px 7px; /* ???? */
+  color: inherit;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
+  border-radius: 3px;
+}
+
+.comment-form #cancel-comment-reply-link {
+  position: absolute;
+  right: 80px;
+  bottom: 25px;
+  padding: 3px 5px;
+  color: inherit;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
+  border-radius: 3px;
+}
+
+.comment-form #cancel-comment-reply-link:hover {
+  text-decoration: none;
+}
+
+
+
+.pager {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+}
+/* */
+.pager li {
+    display: inline;
+}
+
+.pager li > a, .pager li > span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+}
+
+.pager li > a:hover, .pager li > a:focus {
+    text-decoration: none;
+    background-color: #eeeeee;
+}
+
+.pager .next > a, .pager .next > span {
+    float: right;
+}
+
+.pager .previous > a, .pager .previous > span {
+    float: left;
+}
+
+.pager > a, .pager > a:hover, .pager > a:focus, .pager > span {
+    color: #777777;
+    background-color: #fff;
+    cursor: not-allowed;
+}
