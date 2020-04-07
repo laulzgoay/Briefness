@@ -50,7 +50,7 @@ Briefness
 ├─img
 │      close.png
 │      favicon.ico
-│      favicon.png
+│      logo.png
 │      next.png
 │      prev.png
 │      

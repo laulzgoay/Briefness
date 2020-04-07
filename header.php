@@ -65,7 +65,7 @@
 <div class="container">
 	<header>
 		<div id="wrap">
-		  	<h1><a href="<?php $this->options->siteUrl(); ?>" class="logo"><?php $this->options->title() ?></a></h1>
+		  	<h1><a href="<?php $this->options->siteUrl(); ?>" class="logo"><img src="<?php $this->options->logoUrl(); ?>" alt="" style="width:auto;height:auto;"></a></h1>
 		    <nav id="nav">
 		      <ul>
 		        <li><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>

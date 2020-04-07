@@ -7,7 +7,10 @@ function themeConfig($form) {
     
     $siteStat = new Typecho_Widget_Helper_Form_Element_Textarea('siteStat', NULL, NULL, _t('统计代码'), _t('在这里填入网站统计代码'));
     $form->addInput($siteStat);
-
+    
+    //LOGO地址
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, '/usr/themes/Briefness/img/logo.png', _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
+	$form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
     //附件源地址
     $src_address = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('替换前地址'), _t('即你的附件存放地址，如http://www.yourblog.com/usr/uploads/'));
@@ -111,4 +114,27 @@ function  art_count ($cid){
 $db=Typecho_Db::get ();
 $rs=$db->fetchRow ($db->select ('table.contents.text')->from ('table.contents')->where ('table.contents.cid=?',$cid)->order ('table.contents.cid',Typecho_Db::SORT_ASC)->limit (1));
 echo mb_strlen($rs['text'], 'UTF-8');
+}
+
+/**
+ * 加载时间
+ * @return bool
+ */
+function timer_start() {
+    global $timestart;
+    $mtime     = explode( ' ', microtime() );
+    $timestart = $mtime[1] + $mtime[0];
+    return true;
+}
+timer_start();
+function timer_stop( $display = 0, $precision = 3 ) {
+    global $timestart, $timeend;
+    $mtime     = explode( ' ', microtime() );
+    $timeend   = $mtime[1] + $mtime[0];
+    $timetotal = number_format( $timeend - $timestart, $precision );
+    $r         = $timetotal < 1 ? $timetotal * 1000 . " ms" : $timetotal . " s";
+    if ( $display ) {
+        echo $r;
+    }
+    return $r;
 }
