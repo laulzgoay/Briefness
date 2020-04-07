@@ -34,7 +34,7 @@
            <li><a href="<?php $this->options->siteUrl(); ?>about.html"><i class="fa fa-pencil-square-o fa-fw"></i><span>关于博主</span></a></li>
     </ul>
 </div>
-<<script type="text/javascript" src="<?php $this->options->themeUrl('./assets/js/clickright.js'); ?>"></script>
+<script type="text/javascript" src="<?php $this->options->themeUrl('./assets/js/clickright.js'); ?>"></script>
 
 </head>
 
