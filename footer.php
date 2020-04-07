@@ -8,6 +8,9 @@
     </footer>
         <script src="<?php $this->options->themeUrl('./assets/js/lightbox.js'); ?>"></script>
 
+<?php if (!empty($this->options->tools) && in_array('prism', $this->options->tools)): ?>
+<script src="<?php echo theurl; ?>./prism/prism.js?v=1.0.5"></script><?php endif; ?>
+
     <script>
         $(document).ready(function() {
         $(".post-content img").each(function() {

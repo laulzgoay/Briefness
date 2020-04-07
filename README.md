@@ -31,11 +31,13 @@ Briefness
 │  Screenshot.png
 │  style.css
 │  
-├─asests
+├─assets
 │  ├─css
+│  │      clickright.css
 │  │      lightbox.css
 │  │      
 │  └─js
+│          clickright.js
 │          lightbox.js
 │          main.js
 │          
@@ -43,11 +45,16 @@ Briefness
 │      monofonto.ttf
 │      MonoSpatial.ttf
 │      
-└─img
-        close.png
-        favicon.png
-        next.png
-        prev.png
+├─img
+│      close.png
+│      favicon.ico
+│      next.png
+│      prev.png
+│      
+└─prism
+        line-numer.css
+        prism.css
+        prism.js
 ```
 
 ## Changelog
