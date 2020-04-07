@@ -2,8 +2,8 @@
 <?php $this->need('header.php'); ?>
 
     <h1 class="center"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
-    <p class="center"><?php $this->date('Y 年 n 月 j 日'); ?></p>
-    <div class="post-content">
+    <p class="center"><?php $this->date('Y 年 n 月 j 日'); ?> &nbsp; 文章总字数：<?php echo art_count($this->cid); ?></p>
+    <div class="post-content"></p>
         <p><?php $this->content(); ?></p>
         <div class="center"><p style="color: #ccc;">-------------完-------------</p></div>
     </div>

@@ -23,8 +23,10 @@ Briefness
 │  archive.php
 │  comments.php
 │  footer.php
+│  functions.php
 │  header.php
 │  index.php
+│  LICENSE
 │  page.php
 │  post.php
 │  README.md
@@ -48,6 +50,7 @@ Briefness
 ├─img
 │      close.png
 │      favicon.ico
+│      favicon.png
 │      next.png
 │      prev.png
 │      

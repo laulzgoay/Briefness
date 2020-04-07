@@ -8,7 +8,7 @@
  *
  * @package Beiefness
  * @author 小俊
- * @version 1.0.2
+ * @version 1.0.5
  * @link https://www.xjisme.com/
  */
 
@@ -24,9 +24,17 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 </br>
 <?php endwhile; ?>
     <ul class="pager">
-    	<li class="previous"><?php $this->pageLink('上一页'); ?></li>
+    	<li class="previous"><?php $this->pageLink('上一页','prev'); ?></li>
         <li class="next"><?php $this->pageLink('下一页','next'); ?></li> 
         
     </ul>
+    
+<ul class="pager">
+<?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
+<li>文章总数：<?php $stat->publishedPostsNum() ?>篇</li>
+<li>分类总数：<?php $stat->categoriesNum() ?>个</li>
+<li>评论总数：<?php $stat->publishedCommentsNum() ?>条</li>
+<li>页面总数：<?php $stat->publishedPagesNum() ?>个</li>
+</ul>
 
  <?php $this->need('footer.php'); ?>
