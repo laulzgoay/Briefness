@@ -2,12 +2,6 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
     
-    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入网站备案号'));
-    $form->addInput($icpNum);
-    
-    $siteStat = new Typecho_Widget_Helper_Form_Element_Textarea('siteStat', NULL, NULL, _t('统计代码'), _t('在这里填入网站统计代码'));
-    $form->addInput($siteStat);
-
 /**
  zeze
  **/
@@ -19,6 +13,15 @@ function themeConfig($form) {
     array('prism','fancybox'), _t('<span onclick="bian()">拓展设置</span>'));$tools->setAttribute('class', 'col-mb-12 typecho-option home');
     $form->addInput($tools->multiMode());
 
+    $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入网站备案号'));
+    $form->addInput($icpNum);
+    
+    $siteStat = new Typecho_Widget_Helper_Form_Element_Textarea('siteStat', NULL, NULL, _t('统计代码'), _t('在这里填入网站统计代码'));
+    $form->addInput($siteStat);
+
+
+    $subTitle = new Typecho_Widget_Helper_Form_Element_Text('subTitle', NULL, NULL, _t('自定义站点副标题'), _t('浏览器副标题，仅在当前页面为首页时显示，显示格式为：<b>标题 - 副标题</b>，留空则不显示副标题'));
+	$form->addInput($subTitle);
 
     //LOGO地址
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, '/usr/themes/Briefness/img/logo.png', _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
@@ -31,6 +34,7 @@ function themeConfig($form) {
     //替换后地址
     $cdn_address = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('替换后'), _t('即你的七牛云存储域名，如http://yourblog.qiniudn.com/'));
     $form->addInput($cdn_address);
+    
     
 }
 function showThumb($obj,$size=null,$link=false,$pattern='<div class="post-thumb"><a class="thumb" href="{permalink}" title="{title}" style="background-image:url({thumb})"></a></div>'){
