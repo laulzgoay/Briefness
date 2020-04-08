@@ -8,5 +8,22 @@
         <p><?php $this->content(); ?></p>
         <div class="center"><p style="color: #ccc;">-------------完-------------</p></div>
     </div>
+    
+<?php if (!empty($this->options->tools) && !in_array('copyright', $this->options->tools)): ?>
+
+<!--版权声明开始-->
+<div class="card ribbon-box m-0 mt-3">
+<div class="card-body">
+<div class="ribbon ribbon-danger float-left"><i class="mdi mdi-copyright mr-1"></i> 版权声明</div>
+<div class="mb-1 shadow-none ribbon-content">
+<p>本文基于《<a target="_blank" rel="external nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</a>》许可协议授权
+<br>
+文章链接：<?php $this->permalink() ?> (转载时请注明本文出处及文章链接)</p>
+</div>
+</div>
+</div>
+<!--版权声明结束-->
+<?php endif;?>
+
 <?php $this->need('comments.php'); ?>
 <?php $this->need('footer.php'); ?>

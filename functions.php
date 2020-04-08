@@ -7,10 +7,23 @@ function themeConfig($form) {
     
     $siteStat = new Typecho_Widget_Helper_Form_Element_Textarea('siteStat', NULL, NULL, _t('统计代码'), _t('在这里填入网站统计代码'));
     $form->addInput($siteStat);
-    
+
+/**
+ zeze
+ **/
+
+    $tools = new Typecho_Widget_Helper_Form_Element_Checkbox('tools', 
+    array(
+'banquan' => _t('开启文章底部版权提示'),
+),
+    array('prism','fancybox'), _t('<span onclick="bian()">拓展设置</span>'));$tools->setAttribute('class', 'col-mb-12 typecho-option home');
+    $form->addInput($tools->multiMode());
+
+
     //LOGO地址
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, '/usr/themes/Briefness/img/logo.png', _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
 	$form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+    
 
     //附件源地址
     $src_address = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('替换前地址'), _t('即你的附件存放地址，如http://www.yourblog.com/usr/uploads/'));
@@ -19,15 +32,6 @@ function themeConfig($form) {
     $cdn_address = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('替换后'), _t('即你的七牛云存储域名，如http://yourblog.qiniudn.com/'));
     $form->addInput($cdn_address);
     
-    //默认缩略图
-    $default = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, '', _t('默认缩略图'),_t('文章没有图片时显示的默认缩略图，为空时表示不显示'));
-    $form->addInput($default);
-    //默认宽度
-    $width = new Typecho_Widget_Helper_Form_Element_Text('thumb_width', NULL, '540', _t('缩略图默认宽度'));
-    $form->addInput($width);
-    //默认高度
-    $height = new Typecho_Widget_Helper_Form_Element_Text('thumb_height', NULL, '324', _t('缩略图默认高度'));
-    $form->addInput($height);
 }
 function showThumb($obj,$size=null,$link=false,$pattern='<div class="post-thumb"><a class="thumb" href="{permalink}" title="{title}" style="background-image:url({thumb})"></a></div>'){
     preg_match_all( "/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches );

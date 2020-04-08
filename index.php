@@ -8,14 +8,13 @@
  *
  * @package Beiefness
  * @author 小俊
- * @version 1.1.0
+ * @version 1.1.1
  * @link https://www.xjisme.com/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  $this->need('header.php');
  ?>
-
 <?php while($this->next()): ?>
 	<h1 class="center"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
 	<p class="center"><?php $this->date('Y 年 n 月 j 日'); ?></p>
@@ -37,4 +36,4 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <li>页面总数：<?php $stat->publishedPagesNum() ?>个</li>
 </ul>
 
- <?php $this->need('footer.php'); ?>
+<?php $this->need('footer.php'); ?>
