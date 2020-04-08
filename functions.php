@@ -1,5 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+define('INITIAL_VERSION_NUMBER', '1.2.0');
+if (Helper::options()->GravatarUrl) define('__TYPECHO_GRAVATAR_PREFIX__', Helper::options()->GravatarUrl);
 function themeConfig($form) {
     
 /**
@@ -23,8 +25,11 @@ function themeConfig($form) {
     $subTitle = new Typecho_Widget_Helper_Form_Element_Text('subTitle', NULL, NULL, _t('自定义站点副标题'), _t('浏览器副标题，仅在当前页面为首页时显示，显示格式为：<b>标题 - 副标题</b>，留空则不显示副标题'));
 	$form->addInput($subTitle);
 
+	$favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, '/usr/themes/Briefness/img/favicon.ico', _t('Favicon 地址'), _t('在这里填入一个图片 URL 地址, 以添加一个 Favicon，留空则不单独设置 Favicon，主题默认 Favicon 地址为 /usr/themes/Briefness/img/favicon.ico'));
+	$form->addInput($favicon);
+
     //LOGO地址
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, '/usr/themes/Briefness/img/logo.png', _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, '/usr/themes/Briefness/img/logo.png', _t('站点LOGO地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO ，主题默认 LOGO 地址为 /usr/themes/Briefness/img/logo.png'));
 	$form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
     
 
@@ -35,6 +40,13 @@ function themeConfig($form) {
     $cdn_address = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('替换后'), _t('即你的七牛云存储域名，如http://yourblog.qiniudn.com/'));
     $form->addInput($cdn_address);
     
+    
+    $GravatarUrl = new Typecho_Widget_Helper_Form_Element_Radio('GravatarUrl', 
+	array(false => _t('官方源'),
+	'https://cn.gravatar.com/avatar/' => _t('官方国内源'),
+	'https://cdn.v2ex.com/gravatar/' => _t('V2EX源')),
+	false, _t('Gravatar头像源'), _t('默认官方源'));
+	$form->addInput($GravatarUrl);
     
 }
 function showThumb($obj,$size=null,$link=false,$pattern='<div class="post-thumb"><a class="thumb" href="{permalink}" title="{title}" style="background-image:url({thumb})"></a></div>'){

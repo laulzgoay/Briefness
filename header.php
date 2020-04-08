@@ -19,7 +19,9 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
 	<meta name="apple-mobile-web-app-title" content="<?php $this->author(); ?>">
-	<link type="image/png" rel="shortcut icon" href="<?php $this->options->themeUrl('./img/favicon.ico'); ?>" />
+	<?php if ($this->options->favicon): ?>
+    <link rel="shortcut icon" href="<?php $this->options->favicon(); ?>" />
+    <?php endif; ?>
 	<?php $this->header(); ?>
 	<link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=3.0'); ?>">
 	<link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl('./assets/css/lightbox.css'); ?>">
