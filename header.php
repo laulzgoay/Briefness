@@ -13,7 +13,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
+        <meta name="renderer" content="webkit">
 	<meta name="publisher" content="<?php $this->author(); ?>">
 	<meta name="viewport" content="initial-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,36 +40,12 @@
         <li><a href="javascript:history.go(-1);"><i class="fa fa-arrow-left fa-fw"></i><span>后退</span></a></li>
         <li style="border-bottom:1px solid gray"><a href="javascript:window.location.reload();"><i class="fa fa-refresh fa-fw"></i><span>重载网页</span></a></li>
         <li><a href="<?php $this->options->siteUrl(); ?>links.html"><i class="fa fa-meh-o fa-fw"></i><span>和我当邻居</span></a></li>  
-           <li><a href="<?php $this->options->siteUrl(); ?>about.html"><i class="fa fa-pencil-square-o fa-fw"></i><span>关于博主</span></a></li>
+        <li><a href="<?php $this->options->siteUrl(); ?>about.html"><i class="fa fa-pencil-square-o fa-fw"></i><span>关于博主</span></a></li>
     </ul>
 </div>
 <script type="text/javascript" src="<?php $this->options->themeUrl('./assets/js/clickright.js'); ?>"></script>
 
 </head>
-
-<!--
-           ▄              ▄
-          ▌▒█           ▄▀▒▌
-          ▌▒▒▀▄        ▀▒▒▒▐
-         ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
-       ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐
-     ▄▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▐
-    ▐▒▒▒▄▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▒▌
-    ▌▒▒▐▄█▀▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐
-   ▐▒▒▒▒▒▒▒▒▒▒▒▌██▀▒▒▒▒▒▒▒▒▀▄▌
-   ▌▒▀▄██▄▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌
-   ▌▀▐▄█▄█▌▄▒▀▒▒▒▒▒▒░░░░░░▒▒▒▐
-  ▐▒▀▐▀▐▀▒▒▄▄▒▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌
-  ▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒░░░░░░▒▒▒▐
-   ▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌
-   ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐
-    ▀  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▌
-      ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀
-     ▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀
-    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀
---你看源码时_是否期待源码也同样注视(注释)着你
--->
-
 <body id="page">
 <div class="container">
 	<header>
