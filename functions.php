@@ -141,7 +141,7 @@ echo mb_strlen($rs['text'], 'UTF-8');
  * @return bool
  */
 
-function timer_stop( $display = 0, $precision = 3 ) {
+function timer_get( $display = 0, $precision = 3 ) {
     $timestart = $_SERVER ['REQUEST_TIME'];
     $mtime     = explode( ' ', microtime() );
     $timeend   = $mtime[1] + $mtime[0];
