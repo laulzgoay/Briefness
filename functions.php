@@ -140,15 +140,9 @@ echo mb_strlen($rs['text'], 'UTF-8');
  * 加载时间
  * @return bool
  */
-function timer_start() {
-    global $timestart;
-    $mtime     = explode( ' ', microtime() );
-    $timestart = $mtime[1] + $mtime[0];
-    return true;
-}
-timer_start();
-function timer_stop( $display = 0, $precision = 3 ) {
-    global $timestart, $timeend;
+
+function timer_get( $display = 0, $precision = 3 ) {
+    $timestart = $_SERVER ['REQUEST_TIME'];
     $mtime     = explode( ' ', microtime() );
     $timeend   = $mtime[1] + $mtime[0];
     $timetotal = number_format( $timeend - $timestart, $precision );
