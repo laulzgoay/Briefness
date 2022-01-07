@@ -1,19 +1,12 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define('INITIAL_VERSION_NUMBER', '1.2.0');
+define('INITIAL_VERSION_NUMBER', '1.3.1');
 if (Helper::options()->GravatarUrl) define('__TYPECHO_GRAVATAR_PREFIX__', Helper::options()->GravatarUrl);
 function themeConfig($form) {
     
 /**
  zeze
  **/
-
-    $tools = new Typecho_Widget_Helper_Form_Element_Checkbox('tools', 
-    array(
-'banquan' => _t('开启文章底部版权提示'),
-),
-    array('prism','fancybox'), _t('<span onclick="bian()">拓展设置</span>'));$tools->setAttribute('class', 'col-mb-12 typecho-option home');
-    $form->addInput($tools->multiMode());
 
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入网站备案号'));
     $form->addInput($icpNum);
@@ -42,11 +35,14 @@ function themeConfig($form) {
     
     
     $GravatarUrl = new Typecho_Widget_Helper_Form_Element_Radio('GravatarUrl', 
-	array(false => _t('官方源'),
-    'https://cn.gravatar.com/avatar/' => _t('官方国内源'),
-	'https://g.xjisme.com/avatar/' => _t('小俊博客源'),
-	'https://cdn.v2ex.com/gravatar/' => _t('V2EX源')),
-	false, _t('Gravatar头像源'), _t('默认官方源'));
+    array
+    (
+        false => _t('官方源'),
+        'https://cdn.helingqi.com/avatar/' => _t('禾令奇源'),
+        'https://sdn.geekzu.org/avatar/' => _t('极客族源'),
+        'https://dn-qiniu-avatar.qbox.me/avatar/' => _t('七牛源')
+	),
+	'https://cdn.helingqi.com/avatar/', _t('Gravatar头像源'), _t('默认禾令奇源'));
 	$form->addInput($GravatarUrl);
     
 }
@@ -152,4 +148,17 @@ function timer_get( $display = 0, $precision = 3 ) {
         echo $r;
     }
     return $r;
+}
+
+function themeFields($layout) {
+    $articleCopyright = new Typecho_Widget_Helper_Form_Element_Radio('articleCopyright', 
+    array
+    (
+        'yc' => _t('原创版权'),
+        'tg' => _t('投稿版权')
+    ),
+        'tg', _t('投稿版权'), _t('文章版权类型默认：投稿版权')
+    );
+    $layout->addItem($articleCopyright); 
+
 }

@@ -6,11 +6,10 @@
     <p class="center">本文最后更新时间为:<?php echo date('F jS , Y \\a\t H:i a', $this->modified);?>，如果内容失效请联系博主！</p>
     <div class="post-content"></p>
         <p><?php $this->content(); ?></p>
-        <div class="center"><p style="color: #ccc;">-------------完-------------</p></div>
+        <div class="center"><p style="color: #ccc;">-------------------完-------------------</p></div>
     </div>
-    
-<?php if (!empty($this->options->tools) && !in_array('copyright', $this->options->tools)): ?>
 
+<?php if ($this->fields->articleCopyright == 'yc'):?>
 <!--版权声明开始-->
 <div class="card ribbon-box m-0 mt-3">
 <div class="card-body">
@@ -23,7 +22,20 @@
 </div>
 </div>
 <!--版权声明结束-->
-<?php endif;?>
+<?php else : ?>
+<!--版权声明开始-->
+<div class="card ribbon-box m-0 mt-3">
+<div class="card-body">
+<div class="ribbon ribbon-danger float-left"><i class="mdi mdi-copyright mr-1"></i> 版权声明</div>
+<div class="mb-1 shadow-none ribbon-content">
+<p>本文来自投稿，不代表本站立场,
+<br>
+文章链接：<?php $this->permalink() ?> (转载时请注明本文出处及文章链接)</p>
+</div>
+</div>
+</div>
+<!--版权声明结束-->
+<?php endif; ?> 
 
 <?php $this->need('comments.php'); ?>
 <?php $this->need('footer.php'); ?>
