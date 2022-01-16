@@ -8,7 +8,7 @@
  *
  * @package Beiefness
  * @author 小俊
- * @version 1.3.1
+ * @version 1.3.2
  * @link https://www.xjisme.com/
  */
 

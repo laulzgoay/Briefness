@@ -2,7 +2,7 @@
 <?php $this->need('header.php'); ?>
 
     <h1 class="center"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
-    <p class="center"><?php $this->date('Y 年 n 月 j 日'); ?> &nbsp; 文章总字数：<?php echo art_count($this->cid); ?></p>
+    <p class="center"><?php $this->date('Y 年 n 月 j 日'); ?> &nbsp; 文章总字数：<?php echo art_count($this->cid); ?> &nbsp; <?php get_post_view($this) ?>次 阅读</p>
     <p class="center">本文最后更新时间为:<?php echo date('F jS , Y \\a\t H:i a', $this->modified);?>，如果内容失效请联系博主！</p>
     <div class="post-content"></p>
         <p><?php $this->content(); ?></p>
