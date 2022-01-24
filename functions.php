@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-define('INITIAL_VERSION_NUMBER', '1.3.2');
+define('INITIAL_VERSION_NUMBER', '1.4.0');
 if (Helper::options()->GravatarUrl) define('__TYPECHO_GRAVATAR_PREFIX__', Helper::options()->GravatarUrl);
 function themeConfig($form) {
     
@@ -38,11 +38,12 @@ function themeConfig($form) {
     array
     (
         false => _t('官方源'),
+		'https://gravatar.xjisme.com/avatar/' => _t('云梦泽深林源'),
         'https://cdn.helingqi.com/avatar/' => _t('禾令奇源'),
         'https://sdn.geekzu.org/avatar/' => _t('极客族源'),
         'https://dn-qiniu-avatar.qbox.me/avatar/' => _t('七牛源')
 	),
-	'https://cdn.helingqi.com/avatar/', _t('Gravatar头像源'), _t('默认禾令奇源'));
+	'https://gravatar.xjisme.com/avatar/', _t('Gravatar头像源'), _t('默认云梦泽深林源'));
 	$form->addInput($GravatarUrl);
     
 }
