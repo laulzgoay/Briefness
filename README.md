@@ -1,6 +1,8 @@
 # Briefness
 一款简约的单栏 Typecho 主题，极致简洁的风格
 
+点击加入 Briefness 用户交流群：![199175766](https://jq.qq.com/?_wv=1027&k=3tN6NBuF)
+
 <p align="center">
 <img src="./Screenshot.png">
 </p>        
