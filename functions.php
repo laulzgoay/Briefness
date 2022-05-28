@@ -38,7 +38,7 @@ function themeConfig($form) {
     array
     (
         false => _t('官方源'),
-	'https://gravatar.xjisme.com/avatar/' => _t('云梦泽深林源'),
+	'https://gravatar.ymzsl.com/avatar/' => _t('云梦泽深林源'),
         'https://cdn.helingqi.com/avatar/' => _t('禾令奇源'),
         'https://sdn.geekzu.org/avatar/' => _t('极客族源'),
         'https://dn-qiniu-avatar.qbox.me/avatar/' => _t('七牛源')
