@@ -68,7 +68,7 @@ Briefness
 ## Donation
 如果您发现Briefness有用，可以给我们买包辣条 🎉
 
-[Donation](https://www.xjisme.com/sponsor.html)
+[Donation](https://www.smalljun.com/sponsor.html)
 
 ## License
 
